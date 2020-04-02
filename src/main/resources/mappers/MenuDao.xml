@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.apesource.dao.MenuDao">
+    <resultMap id="b" type="menu">
+        <id property="mId" column="m_id"></id>
+        <result property="mMname" column="m_name"></result>
+        <result property="mCost" column="m_cost"></result>
+        <result property="mPoint" column="m_point"></result>
+    </resultMap>
+
+
+    <select id="selectAll" resultMap="b">
+      SELECT * from menu
+    </select>
+
+    <update id="updateMenuById" parameterType="int" >
+        UPDATE menu set m_point=#{point} where m_id=#{id}
+    </update>
+
+    <select id="selectById" resultMap="b" parameterType="int">
+         SELECT * from menu WHERE m_id=#{id}
+    </select>
+
+</mapper>   

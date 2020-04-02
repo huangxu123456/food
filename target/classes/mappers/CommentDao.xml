@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.apesource.dao.CommentDao">
+   <resultMap id="e" type="Comment">
+       <id property="comId" column="com_id"></id>
+       <result property="comStar" column="com_star"></result>
+       <result property="comComment" column="com_comment"></result>
+   </resultMap>
+
+    <insert id="InsertComment" parameterType="Comment" keyProperty="comId" useGeneratedKeys="true">
+        INSERT INTO comment(com_star,com_comment) VALUES (#{comStar},#{comComment})
+    </insert>
+
+</mapper>   

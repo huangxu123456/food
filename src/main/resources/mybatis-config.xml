@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+   <properties resource="root.properties"></properties>
+    <typeAliases >
+        <package name="com.apesource.pojo"></package>
+    </typeAliases>
+
+   <environments default="diancan">
+       <environment id="diancan">
+           <transactionManager type="jdbc"></transactionManager>
+           <dataSource type="POOLED">
+               <property name="driver" value="${driver}"></property>
+               <property name="url" value="${url}"></property>
+               <property name="username" value="${root}"></property>
+               <property name="password" value="${password}"></property>
+
+           </dataSource>
+       </environment>
+   </environments>
+
+    <mappers>
+       <mapper resource="mappers/UsersDao.xml"></mapper>
+        <mapper resource="mappers/MenuDao.xml"></mapper>
+        <mapper resource="mappers/Order1Dao.xml"></mapper>
+        <mapper resource="mappers/AddressDao.xml"></mapper>
+        <mapper resource="mappers/CommentDao.xml"></mapper>
+    </mappers>dress
+</configuration>
